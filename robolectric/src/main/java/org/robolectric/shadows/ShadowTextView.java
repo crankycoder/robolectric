@@ -116,6 +116,11 @@ public class ShadowTextView extends ShadowView {
   }
 
   @Implementation
+  public final int getHeight() {
+      return 0;
+  }
+
+  @Implementation
   public void removeTextChangedListener(TextWatcher watcher) {
     this.watchers.remove(watcher);
     directlyOn(realTextView, TextView.class).removeTextChangedListener(watcher);
